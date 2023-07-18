@@ -18,13 +18,20 @@ public class Book {
     private Long id;
     private String name;
     private String author;
-    private Long userId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @NotNull
+    private User user;
     private String publisher;
     private int publishDate;
     private String publishPlace;
     private int pageCount;
     private boolean available;
-    private Long categoryId;
+
+    @ManyToOne()
+    @JoinColumn(name = "category_id")
+    private Category category;
     private String isbn10;
     private String isbn13;
     private String assetNumber;
