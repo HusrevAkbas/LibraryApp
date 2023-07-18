@@ -1,16 +1,16 @@
 package app.library.utilities.results;
 
 public class ErrorDataResult<T> extends DataResult<T> {
-    ErrorDataResult(T data, String message) {
+    public ErrorDataResult(T data, String message) {
         super(data, false, message);
     }
-    ErrorDataResult(T data) {
+    public ErrorDataResult(T data) {
         super(data, false);
     }
-    ErrorDataResult(String message) {
+    public ErrorDataResult(String message) {
         super(null, false, message);
     }
-    ErrorDataResult() {
+    public ErrorDataResult() {
         super(null, false);
     }
 }

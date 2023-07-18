@@ -1,10 +1,10 @@
 package app.library.utilities.results;
 
 public class SuccessResult extends Result{
-    SuccessResult(String message) {
+    public SuccessResult(String message) {
         super(true, message);
     }
-    SuccessResult() {
+    public SuccessResult() {
         super(true);
     }
 }

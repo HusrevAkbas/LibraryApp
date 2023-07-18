@@ -1,16 +1,16 @@
 package app.library.utilities.results;
 
 public class SuccessDataResult<T> extends DataResult<T> {
-    SuccessDataResult(T data) {
+    public SuccessDataResult(T data) {
         super(data, true);
     }
-    SuccessDataResult(T data, String message) {
+    public SuccessDataResult(T data, String message) {
         super(data, true, message);
     }
-    SuccessDataResult(String message) {
+    public SuccessDataResult(String message) {
         super(null, true, message);
     }
-    SuccessDataResult() {
+    public SuccessDataResult() {
         super(null, true);
     }
 }
