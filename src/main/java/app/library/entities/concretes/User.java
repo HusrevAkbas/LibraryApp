@@ -6,27 +6,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-public class Book {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @Column(updatable = false)
     private Long id;
-    private String name;
-    private String author;
-    private Long userId;
-    private String publisher;
-    private int publishDate;
-    private String publishPlace;
-    private int pageCount;
-    private boolean available;
-    private Long categoryId;
-    private String isbn10;
-    private String isbn13;
-    private String assetNumber;
+    private String userName;
+    private String email;
+    private String password;
     private String imageUrl;
 }

@@ -9,6 +9,6 @@ public interface BookService {
     public DataResult<List<Book>> findAllBooks();
     public DataResult<Book> findBookById(Long id);
     public Result delete(Long id);
-
     public Result add(Book book);
+    public Result update(Book book);
 }

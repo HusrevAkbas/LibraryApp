@@ -26,22 +26,24 @@ public class BookManager implements BookService {
     public DataResult<List<Book>> findAllBooks() {
         return new SuccessDataResult<>(this.bookRepository.findAll(),"All books listed");
     }
-
     @Override
     public DataResult<Book> findBookById(Long id) {
-        Book data = this.bookRepository.findById(id).get();
-        return new SuccessDataResult<>(data,"Book found");
+        return new SuccessDataResult<>(this.bookRepository.findById(id).get(),"Book found");
     }
-
     @Override
     public Result delete(Long id) {
         this.bookRepository.deleteById(id);
         return new SuccessResult("Book removed");
     }
-
     @Override
     public Result add(Book book) {
         this.bookRepository.save(book);
         return new SuccessResult("Book added");
+    }
+
+    @Override
+    public Result update(Book book) {
+        this.bookRepository.save(book);
+        return new SuccessResult("Book updated");
     }
 }

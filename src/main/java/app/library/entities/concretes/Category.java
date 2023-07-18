@@ -5,28 +5,19 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CollectionId;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-public class Book {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @Column(updatable = false)
-    private Long id;
+    private int id;
     private String name;
-    private String author;
-    private Long userId;
-    private String publisher;
-    private int publishDate;
-    private String publishPlace;
-    private int pageCount;
-    private boolean available;
-    private Long categoryId;
-    private String isbn10;
-    private String isbn13;
-    private String assetNumber;
+    private String description;
     private String imageUrl;
 }
