@@ -1,5 +1,6 @@
 package app.library.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,16 +17,19 @@ public class Book {
     @NotNull
     @Column(updatable = false)
     private Long id;
+    @NotNull
     private String name;
+    @NotNull
     private String author;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     @NotNull
     private User user;
+    @NotNull
     private String publisher;
     private int publishDate;
     private String publishPlace;
+    @NotNull
     private int pageCount;
     private boolean available;
 
