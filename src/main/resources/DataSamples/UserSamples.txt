@@ -1,0 +1,16 @@
+{
+    "id":1,
+    "userName": "Aline",
+    "email": "aline@mail.com",
+    "password" : "userpass1",
+    "imageUrl": "",
+    "roles": [ADMIN,USER]
+},
+{
+    "id":2,
+    "userName": "Bruce",
+    "email": "bruce@mail.com",
+    "password" : "userpass2",
+    "imageUrl": "",
+    "roles": [ADMIN,USER]
+}

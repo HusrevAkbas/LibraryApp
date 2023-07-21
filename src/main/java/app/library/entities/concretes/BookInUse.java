@@ -1,4 +1,5 @@
 package app.library.entities.concretes;
+import app.library.entities.abstracts.BookInUseStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ public class BookInUse {
     @ManyToOne
     @JoinColumn(name="book_id")
     Book book;
+    BookInUseStatus status;
     LocalDateTime startDate;
     LocalDateTime endDate;
 }
