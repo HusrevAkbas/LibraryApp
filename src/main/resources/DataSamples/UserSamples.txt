@@ -1,11 +1,14 @@
-{
-    "id":1,
-    "userName": "Aline",
-    "email": "aline@mail.com",
-    "password" : "userpass1",
-    "imageUrl": "",
-    "roles": [ADMIN,USER]
-},
+    {
+      "id": 1,
+      "userName": "Aline",
+      "email": "aline@mail.com",
+      "password": "userpass1",
+      "imageUrl": "",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ]
+    },
 {
     "id":2,
     "userName": "Bruce",

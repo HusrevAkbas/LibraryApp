@@ -1,5 +1,5 @@
 package app.library.entities.concretes;
-import app.library.entities.abstracts.BookInUseStatus;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -7,11 +7,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class BookInUse {
+public class ReadingRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
@@ -22,7 +23,8 @@ public class BookInUse {
     @ManyToOne
     @JoinColumn(name="book_id")
     private Book book;
-    private BookInUseStatus status;
+    private int lastReadPage;
+    private boolean completed;
     @NotNull
     private LocalDateTime startDate;
     private LocalDateTime endDate;

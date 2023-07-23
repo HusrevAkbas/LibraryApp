@@ -1,39 +1,52 @@
-{
-    "name"= "Moses im Ägypten: Ein Roman Nach Der Biblischen Geschichte",
-    "author": "Lynne Reid Banks",
-    "user":{
-        "id":1
+    {
+      "id": 1,
+      "name": "Moses im Ägypten: Ein Roman Nach Der Biblischen Geschichte",
+      "author": "Lynne Reid Banks",
+      "user": {
+        "id": 1
+      },
+      "publisher": "Goldmann Verlag",
+      "publishDate": 1999,
+      "publishPlace": "Augsburg",
+      "pageCount": 125,
+      "available": true,
+      "category": {
+        "id": 2
+      },
+      "isbn10": "3442444314",
+      "isbn13": "9783442444311",
+      "assetNumber": "BAN001",
+      "imageUrl": "https://images.isbndb.com/covers/43/11/9783442444311.jpg"
     },
-    "publisher": "Goldmann Verlag",
-    "publishDate": 1999,
-    "publishPlace": "Pressedruck Augsburg",
-    "pageCount": 125;
-    "available": true,
-    "category": {
-        id:1
-    },
-    "isbn10": "3442444314",
-    "isbn13":"9783442444311",
-    "assetNumber":"",
-    "imageUrl": "https://images.isbndb.com/covers/43/11/9783442444311.jpg"
-},
-{
-    "name"= "Die Sterne Können Warten",
-    "author": "Jay Basu",
-    "user":{
-        "id":2
-    },
-    "publisher": "Diana Verlag",
-    "publishDate": 2002,
-    "publishPlace": "Germany",
-    "pageCount": 221;
-    "available": true,
-    "category": {
-        id:1
-    },
-    "isbn10": "3828400701",
-    "isbn13":"9783828400702",
-    "assetNumber":"",
-    "imageUrl": "https://images.isbndb.com/covers/07/02/9783828400702.jpg"
-}
+    {
+      "id": 2,
+      "name": "Die Sterne Können Warten",
+      "author": "Jay Basu",
+      "user": {
+        "id": 2,
+        "userName": "Bruce",
+        "email": "bruce@mail.com",
+        "password": "userpass2",
+        "imageUrl": "",
+        "roles": [
+          "ADMIN",
+          "USER"
+        ]
+      },
+      "publisher": "Diana Verlag",
+      "publishDate": 2002,
+      "publishPlace": "Germany",
+      "pageCount": 221,
+      "available": true,
+      "category": {
+        "id": 1,
+        "name": "Novel",
+        "description": "Novel",
+        "imageUrl": ""
+      },
+      "isbn10": "3828400701",
+      "isbn13": "9783828400702",
+      "assetNumber": "BAS001",
+      "imageUrl": "https://images.isbndb.com/covers/07/02/9783828400702.jpg"
+    }
 

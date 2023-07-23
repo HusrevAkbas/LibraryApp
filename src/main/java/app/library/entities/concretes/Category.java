@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CollectionId;
 
 @Entity
 @Data
@@ -17,6 +16,7 @@ public class Category {
     @NotNull
     @Column(updatable = false)
     private int id;
+    @NotNull
     private String name;
     private String description;
     private String imageUrl;

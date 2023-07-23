@@ -4,21 +4,23 @@ import app.library.business.abstracts.BookService;
 import app.library.entities.concretes.Book;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/book")
 @CrossOrigin
 public class BookController {
 
     private BookService bookService;
-    @Autowired
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
+//    @Autowired
+//    public BookController(BookService bookService) {
+//        this.bookService = bookService;
+//    }
     @GetMapping("/all")
     public DataResult<List<Book>> getAllBooks(){
         return this.bookService.findAllBooks();
