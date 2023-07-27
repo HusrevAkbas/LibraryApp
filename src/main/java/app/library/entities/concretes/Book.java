@@ -40,4 +40,5 @@ public class Book {
     private String isbn13;
     private String assetNumber;
     private String imageUrl;
+    private int quantity;
 }

@@ -15,5 +15,5 @@
     "email": "bruce@mail.com",
     "password" : "userpass2",
     "imageUrl": "",
-    "roles": [ADMIN,USER]
+    "roles": ["ADMIN","USER"]
 }

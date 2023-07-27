@@ -1,6 +1,6 @@
 package app.library.entities.abstracts;
 
-public enum UserRoles {
+public enum UserRole {
     ADMIN,
     USER;
 }

@@ -17,10 +17,6 @@ import java.util.List;
 public class BookController {
 
     private BookService bookService;
-//    @Autowired
-//    public BookController(BookService bookService) {
-//        this.bookService = bookService;
-//    }
     @GetMapping("/all")
     public DataResult<List<Book>> getAllBooks(){
         return this.bookService.findAllBooks();
@@ -38,7 +34,7 @@ public class BookController {
         return this.bookService.delete(id);
     }
     @PutMapping("/update")
-    public Result updateBook(Book book){
+    public Result updateBook(@RequestBody Book book){
         return this.bookService.update(book);
     }
 }

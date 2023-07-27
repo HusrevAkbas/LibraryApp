@@ -16,7 +16,8 @@
       "isbn10": "3442444314",
       "isbn13": "9783442444311",
       "assetNumber": "BAN001",
-      "imageUrl": "https://images.isbndb.com/covers/43/11/9783442444311.jpg"
+      "imageUrl": "https://images.isbndb.com/covers/43/11/9783442444311.jpg",
+      "quantity": 1
     },
     {
       "id": 2,
@@ -47,6 +48,7 @@
       "isbn10": "3828400701",
       "isbn13": "9783828400702",
       "assetNumber": "BAS001",
-      "imageUrl": "https://images.isbndb.com/covers/07/02/9783828400702.jpg"
+      "imageUrl": "https://images.isbndb.com/covers/07/02/9783828400702.jpg",
+      "quantity": 4
     }
 
