@@ -2,7 +2,7 @@
       "id": 1,
       "name": "Moses im Ägypten: Ein Roman Nach Der Biblischen Geschichte",
       "author": "Lynne Reid Banks",
-      "user": {
+      "userEntity": {
         "id": 1
       },
       "publisher": "Goldmann Verlag",
@@ -23,7 +23,7 @@
       "id": 2,
       "name": "Die Sterne Können Warten",
       "author": "Jay Basu",
-      "user": {
+      "userEntity": {
         "id": 2,
         "userName": "Bruce",
         "email": "bruce@mail.com",

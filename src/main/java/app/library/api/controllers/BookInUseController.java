@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/book-in-use")
 @AllArgsConstructor
+@CrossOrigin
 public class BookInUseController {
     BookInUseService bookInUseService;
     @GetMapping("/all")

@@ -18,14 +18,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-public class User implements UserDetails {
+public class UserEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @Column(updatable = false)
     private Long id;
     @NotNull
-    private String userName;
+    private String username;
     @NotNull
     private String email;
     @NotNull
@@ -46,7 +46,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
     @Override

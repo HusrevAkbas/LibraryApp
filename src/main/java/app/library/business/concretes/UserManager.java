@@ -2,7 +2,7 @@ package app.library.business.concretes;
 
 import app.library.business.abstracts.UserService;
 import app.library.dataAccess.abstracts.UserRepository;
-import app.library.entities.concretes.User;
+import app.library.entities.concretes.UserEntity;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
 import app.library.utilities.results.SuccessDataResult;
@@ -21,30 +21,30 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public DataResult<List<User>> findAllUsers() {
+    public DataResult<List<UserEntity>> findAllUsers() {
         return new SuccessDataResult<>(this.userRepository.findAll(),"All users listed");
     }
 
     @Override
-    public DataResult<User> findUserById(Long id) {
-        return new SuccessDataResult<>(this.userRepository.findById(id).get(),"User found");
+    public DataResult<UserEntity> findUserById(Long id) {
+        return new SuccessDataResult<>(this.userRepository.findById(id).get(),"UserEntity found");
     }
 
     @Override
-    public Result addUser(User user) {
-        this.userRepository.save(user);
-        return new SuccessResult("User added");
+    public Result addUser(UserEntity userEntity) {
+        this.userRepository.save(userEntity);
+        return new SuccessResult("UserEntity added");
     }
 
     @Override
     public Result deleteById(Long id) {
         this.userRepository.deleteById(id);
-        return new SuccessResult("User deleted");
+        return new SuccessResult("UserEntity deleted");
     }
 
     @Override
-    public Result updateUser(User user) {
-        this.userRepository.save(user);
-        return new SuccessResult("User updated");
+    public Result updateUser(UserEntity userEntity) {
+        this.userRepository.save(userEntity);
+        return new SuccessResult("UserEntity updated");
     }
 }

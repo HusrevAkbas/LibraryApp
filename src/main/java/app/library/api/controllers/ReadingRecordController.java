@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/reading-record")
 @AllArgsConstructor
+@CrossOrigin
 public class ReadingRecordController {
     ReadingRecordService recordService;
 

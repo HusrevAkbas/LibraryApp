@@ -1,6 +1,5 @@
 package app.library.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -24,7 +23,7 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "user_id")
     @NotNull
-    private User user;
+    private UserEntity userEntity;
     @NotNull
     private String publisher;
     private int publishDate;
