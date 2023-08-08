@@ -14,11 +14,8 @@ import java.util.List;
 
 @Service
 public class UserManager implements UserService {
-    UserRepository userRepository;
     @Autowired
-    UserManager(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+    UserRepository userRepository;
 
     @Override
     public DataResult<List<UserEntity>> findAllUsers() {
