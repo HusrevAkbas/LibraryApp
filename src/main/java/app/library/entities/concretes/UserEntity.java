@@ -25,8 +25,10 @@ public class UserEntity implements UserDetails {
     @Column(updatable = false)
     private Long id;
     @NotNull
+    @Column(unique = true)
     private String username;
     @NotNull
+    @Column(unique = true)
     private String email;
     @NotNull
     private String password;
