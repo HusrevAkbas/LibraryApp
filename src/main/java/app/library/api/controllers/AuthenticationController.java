@@ -1,5 +1,6 @@
 package app.library.api.controllers;
 
+import app.library.business.abstracts.AppAuthenticationService;
 import app.library.business.request.LoginRequest;
 import app.library.business.request.RegisterRequest;
 import app.library.entities.concretes.UserEntity;
@@ -17,15 +18,15 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class AuthenticationController {
     @Autowired
-    SpringAuthenticationManager authenticationManager;
+    AppAuthenticationService authenticationService;
 
     @PostMapping("/register")
     public ResponseEntity<DataResult<UserEntity>> register (@RequestBody RegisterRequest request){
-        return new  ResponseEntity<>(authenticationManager.register(request), HttpStatus.CREATED) ;
+        return new  ResponseEntity<>(authenticationService.register(request), HttpStatus.CREATED) ;
     }
 
     @PostMapping("/login")
     public ResponseEntity<Result> login(@RequestBody LoginRequest request){
-        return new ResponseEntity<>(authenticationManager.login(request), HttpStatus.ACCEPTED) ;
+        return new ResponseEntity<>(authenticationService.login(request), HttpStatus.ACCEPTED) ;
     }
 }

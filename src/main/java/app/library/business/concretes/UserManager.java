@@ -8,6 +8,8 @@ import app.library.utilities.results.Result;
 import app.library.utilities.results.SuccessDataResult;
 import app.library.utilities.results.SuccessResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class UserManager implements UserService {
 
     @Override
     public DataResult<UserEntity> findUserById(Long id) {
-        return new SuccessDataResult<>(this.userRepository.findById(id).get(),"UserEntity found");
+        return new SuccessDataResult<>(this.userRepository.findById(id).orElseThrow(),"User not found");
     }
 
     @Override
@@ -43,5 +45,10 @@ public class UserManager implements UserService {
     public Result updateUser(UserEntity userEntity) {
         this.userRepository.save(userEntity);
         return new SuccessResult("UserEntity updated");
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByUsername(username).orElseThrow();
     }
 }
