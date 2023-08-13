@@ -28,10 +28,12 @@ public class UserController {
     public Result deleteUserById(@PathVariable("id") Long id){
         return this.userService.deleteById(id);
     }
-    @PostMapping("/add")
-    public Result addUser(@RequestBody UserEntity userEntity){
-        return this.userService.addUser(userEntity);
-    }
+
+    // USE AUTHENTICATION CONTROLLER TO ADD NEW USER (/api/auth/register)
+//    @PostMapping("/add")
+//    public Result addUser(@RequestBody UserEntity userEntity){
+//        return this.userService.addUser(userEntity);
+//    }
     @PutMapping("/update")
     public Result updateUser(@RequestBody UserEntity userEntity){
         return this.userService.updateUser(userEntity);

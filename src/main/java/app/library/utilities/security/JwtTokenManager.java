@@ -26,9 +26,11 @@ public class JwtTokenManager {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(" "));
 
+        final long VALIDITY_TIME_AS_SECONDS = 60 * 60 * 24 * 7;
         JwtClaimsSet claimsSet = JwtClaimsSet.builder()
                 .issuer("self")
                 .issuedAt(now)
+                .expiresAt(now.plusSeconds(VALIDITY_TIME_AS_SECONDS))
                 .subject(auth.getName())
                 .claim("roles", scope)
                 .build();

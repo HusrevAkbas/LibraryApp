@@ -4,6 +4,7 @@ import app.library.business.abstracts.AppAuthenticationService;
 import app.library.business.request.LoginRequest;
 import app.library.business.request.RegisterRequest;
 import app.library.entities.concretes.UserEntity;
+import app.library.utilities.exceptions.UsernameAlreadyExist;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
 import app.library.utilities.security.SpringAuthenticationManager;
@@ -21,7 +22,7 @@ public class AuthenticationController {
     AppAuthenticationService authenticationService;
 
     @PostMapping("/register")
-    public ResponseEntity<DataResult<UserEntity>> register (@RequestBody RegisterRequest request){
+    public ResponseEntity<DataResult<UserEntity>> register (@RequestBody RegisterRequest request) throws UsernameAlreadyExist {
         return new  ResponseEntity<>(authenticationService.register(request), HttpStatus.CREATED) ;
     }
 

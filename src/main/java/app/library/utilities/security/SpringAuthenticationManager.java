@@ -6,6 +6,7 @@ import app.library.business.response.LoginResponse;
 import app.library.dataAccess.abstracts.UserRepository;
 import app.library.entities.abstracts.UserRole;
 import app.library.entities.concretes.UserEntity;
+import app.library.utilities.exceptions.UsernameAlreadyExist;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.ErrorDataResult;
 import app.library.utilities.results.SuccessDataResult;
@@ -28,7 +29,8 @@ public class SpringAuthenticationManager {
     @Autowired
     private JwtTokenManager tokenManager;
 
-    public DataResult<UserEntity> register(RegisterRequest request){
+    public DataResult<UserEntity> register(RegisterRequest request) throws UsernameAlreadyExist {
+        if(userRepository.findByUsername(request.getUsername()).isPresent()) throw new UsernameAlreadyExist("Username already exists");
         UserEntity user = new UserEntity(
                 null, request.getUsername(), request.getEmail(), passwordEncoder.encode(request.getPassword()), null, UserRole.USER
         );
@@ -36,14 +38,12 @@ public class SpringAuthenticationManager {
     }
 
     public DataResult<LoginResponse> login(LoginRequest request){
-        System.out.println(request.getUsername());
         try {
             Authentication auth = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             request.getUsername(),request.getPassword()
                     )
             );
-            System.out.println(auth.getName());
             String token = tokenManager.generateToken(auth);
             return new SuccessDataResult<>(new LoginResponse(token),"login successful");
         } catch (AuthenticationException e){
