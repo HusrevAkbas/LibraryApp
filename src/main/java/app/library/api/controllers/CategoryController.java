@@ -4,18 +4,17 @@ import app.library.business.abstracts.CategoryService;
 import app.library.entities.concretes.Category;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/category")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class CategoryController {
+    @Autowired
     CategoryService categoryService;
-    CategoryController(CategoryService categoryService){
-        this.categoryService = categoryService;
-    }
     @GetMapping("/all")
     public DataResult<List<Category>> getAllCategories(){
         return this.categoryService.findAllCategories();

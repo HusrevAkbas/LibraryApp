@@ -8,15 +8,16 @@ import app.library.utilities.results.Result;
 import app.library.utilities.results.SuccessDataResult;
 import app.library.utilities.results.SuccessResult;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/book-in-use")
-@AllArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class BookInUseController {
+    @Autowired
     BookInUseService bookInUseService;
     @GetMapping("/all")
     public DataResult<List<BookInUse>> findAllBooksInUse() {

@@ -4,18 +4,17 @@ import app.library.business.abstracts.UserService;
 import app.library.entities.concretes.UserEntity;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class UserController {
+    @Autowired
     UserService userService;
-    UserController(UserService userService){
-        this.userService = userService;
-    }
     @GetMapping("/all")
     public DataResult<List<UserEntity>> getAllUsers(){
         return this.userService.findAllUsers();

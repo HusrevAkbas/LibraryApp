@@ -5,15 +5,16 @@ import app.library.entities.concretes.ReadingRecord;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/reading-record")
-@AllArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class ReadingRecordController {
+    @Autowired
     ReadingRecordService recordService;
 
     @GetMapping("/all")

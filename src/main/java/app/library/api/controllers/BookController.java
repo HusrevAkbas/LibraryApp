@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
 @RestController
 @RequestMapping("/api/book")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class BookController {
-
+    @Autowired
     private BookService bookService;
     @GetMapping("/all")
     public DataResult<List<Book>> getAllBooks(){
