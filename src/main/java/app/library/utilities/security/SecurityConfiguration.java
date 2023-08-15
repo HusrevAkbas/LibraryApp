@@ -44,11 +44,13 @@ public class SecurityConfiguration {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/api/auth/**").permitAll()
-                                .requestMatchers("/swagger-ui/**","/v3/api-docs/**").permitAll()
-                                .requestMatchers(HttpMethod.GET).hasAnyRole("ADMIN","USER")
-                                .requestMatchers("/api/user/**").hasRole("ADMIN")
-                                .anyRequest().authenticated())
+                                .anyRequest().permitAll()
+//                                .requestMatchers("/api/auth/**").permitAll()
+//                                .requestMatchers("/swagger-ui/**","/v3/api-docs/**").permitAll()
+//                                .requestMatchers(HttpMethod.GET).hasAnyRole("ADMIN","USER")
+//                                .requestMatchers("/api/user/**").hasRole("ADMIN")
+//                                .anyRequest().authenticated()
+                                )
                 .oauth2ResourceServer(
                         oauth->oauth.jwt(
                                 jwtConfigurer -> jwtConfigurer.jwtAuthenticationConverter(authenticationConverter())

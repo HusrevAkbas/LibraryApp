@@ -44,4 +44,9 @@ public class BookManager implements BookService {
         this.bookRepository.save(book);
         return new SuccessResult("Book updated");
     }
+
+    @Override
+    public DataResult<List<Book>> findBooksByUserId(Long id) {
+        return new SuccessDataResult<>(this.bookRepository.findByUserEntityId(id),String.format("Here is user %s books",id)) ;
+    }
 }

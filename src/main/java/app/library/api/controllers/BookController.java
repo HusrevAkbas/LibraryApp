@@ -36,4 +36,8 @@ public class BookController {
     public Result updateBook(@RequestBody Book book){
         return this.bookService.update(book);
     }
+    @GetMapping("/user/{id}")
+    public DataResult<List<Book>> getBooksByUserId(@PathVariable("id") Long id){
+        return this.bookService.findBooksByUserId(id);
+    }
 }

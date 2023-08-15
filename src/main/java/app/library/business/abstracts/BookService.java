@@ -11,4 +11,6 @@ public interface BookService {
     public Result delete(Long id);
     public Result add(Book book);
     public Result update(Book book);
+
+    public DataResult<List<Book>> findBooksByUserId(Long id);
 }
