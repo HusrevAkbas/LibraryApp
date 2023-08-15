@@ -26,7 +26,7 @@ public class UserManager implements UserService {
 
     @Override
     public DataResult<UserEntity> findUserById(Long id) {
-        return new SuccessDataResult<>(this.userRepository.findById(id).orElseThrow(),"User not found");
+        return new SuccessDataResult<>(this.userRepository.findById(id).orElseThrow(),"User found with id: "+id);
     }
 
     @Override
