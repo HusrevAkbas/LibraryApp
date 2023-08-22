@@ -1,10 +1,10 @@
 package app.library.api.controllers;
 
 import app.library.business.abstracts.BookService;
+import app.library.business.response.BookResponse;
 import app.library.entities.concretes.Book;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +17,7 @@ public class BookController {
     @Autowired
     private BookService bookService;
     @GetMapping("/all")
-    public DataResult<List<Book>> getAllBooks(){
+    public DataResult<List<BookResponse>> getAllBooks(){
         return this.bookService.findAllBooks();
     }
     @PostMapping("/add")
@@ -25,7 +25,7 @@ public class BookController {
         return this.bookService.add(book);
     }
     @GetMapping("/{id}")
-    public DataResult<Book> getBookById(@PathVariable("id") Long id){
+    public DataResult<BookResponse> getBookById(@PathVariable("id") Long id){
         return this.bookService.findBookById(id);
     }
     @DeleteMapping("/delete/{id}")

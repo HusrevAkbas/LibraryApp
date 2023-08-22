@@ -35,8 +35,10 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public DataResult<UserEntity> findUserById(Long id) {
-        return new SuccessDataResult<>(this.userRepository.findById(id).orElseThrow(),"User found with id: "+id);
+    public DataResult<UserResponse> findUserById(Long id) {
+        UserEntity userEntity = this.userRepository.findById(id).orElseThrow();
+        UserResponse user = modelMapperService.response().map(userEntity, UserResponse.class);
+        return new SuccessDataResult<>(user,"User found with id: "+id);
     }
 
     @Override

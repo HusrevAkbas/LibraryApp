@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface UserService extends UserDetailsService {
     public DataResult<List<UserResponse>> findAllUsers();
-    public DataResult<UserEntity> findUserById(Long id);
+    public DataResult<UserResponse> findUserById(Long id);
     public Result addUser(UserEntity userEntity);
     public Result deleteById(Long id);
     public Result updateUser(UserEntity userEntity);

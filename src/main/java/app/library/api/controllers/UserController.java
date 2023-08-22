@@ -21,7 +21,7 @@ public class UserController {
         return this.userService.findAllUsers();
     }
     @GetMapping("/{id}")
-    public DataResult<UserEntity> getUserById(@PathVariable("id") Long id){
+    public DataResult<UserResponse> getUserById(@PathVariable("id") Long id){
         return this.userService.findUserById(id);
     }
     @DeleteMapping("/delete/{id}")
