@@ -36,7 +36,7 @@ public class BookManager implements BookService {
     @Override
     public Result add(Book book) {
         this.bookRepository.save(book);
-        return new SuccessResult("Book added");
+        return new SuccessResult("Book added: " + book.getName());
     }
 
     @Override

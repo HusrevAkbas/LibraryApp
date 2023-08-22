@@ -1,6 +1,7 @@
 package app.library.api.controllers;
 
 import app.library.business.abstracts.UserService;
+import app.library.business.response.UserResponse;
 import app.library.entities.concretes.UserEntity;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.Result;
@@ -16,7 +17,7 @@ public class UserController {
     @Autowired
     UserService userService;
     @GetMapping("/all")
-    public DataResult<List<UserEntity>> getAllUsers(){
+    public DataResult<List<UserResponse>> getAllUsers(){
         return this.userService.findAllUsers();
     }
     @GetMapping("/{id}")
