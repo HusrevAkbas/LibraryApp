@@ -1,6 +1,6 @@
 HELP.md
 
-target/surefire-reports
+/surefire-reports/
 
 ### STS ###
 .apt_generated

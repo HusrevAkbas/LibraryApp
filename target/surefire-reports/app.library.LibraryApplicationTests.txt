@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: app.library.LibraryApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.648 s - in app.library.LibraryApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.965 s - in app.library.LibraryApplicationTests
