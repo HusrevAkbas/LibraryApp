@@ -3,10 +3,12 @@ package app.library.utilities.security;
 import app.library.business.request.LoginRequest;
 import app.library.business.request.RegisterRequest;
 import app.library.business.response.LoginResponse;
+import app.library.business.response.UserResponse;
 import app.library.dataAccess.abstracts.UserRepository;
 import app.library.entities.abstracts.UserRole;
 import app.library.entities.concretes.UserEntity;
 import app.library.utilities.exceptions.UsernameAlreadyExist;
+import app.library.utilities.mappers.ModelMapperService;
 import app.library.utilities.results.DataResult;
 import app.library.utilities.results.ErrorDataResult;
 import app.library.utilities.results.SuccessDataResult;
@@ -28,6 +30,8 @@ public class SpringAuthenticationManager {
     private AuthenticationManager authenticationManager;
     @Autowired
     private JwtTokenManager tokenManager;
+    @Autowired
+    private ModelMapperService modelMapperService;
 
     public DataResult<UserEntity> register(RegisterRequest request) throws UsernameAlreadyExist {
         if(userRepository.findByUsername(request.getUsername()).isPresent()) throw new UsernameAlreadyExist("Username already exists");
@@ -44,10 +48,12 @@ public class SpringAuthenticationManager {
                             request.getUsername(),request.getPassword()
                     )
             );
+            UserResponse user = modelMapperService.response()
+                    .map(userRepository.findByUsername(auth.getName()).get(), UserResponse.class);
             String token = tokenManager.generateToken(auth);
-            return new SuccessDataResult<>(new LoginResponse(token),"login successful");
+            return new SuccessDataResult<>(new LoginResponse(token, user),"login successful");
         } catch (AuthenticationException e){
-            return new ErrorDataResult<>(new LoginResponse(""),"login failed ");
+            return new ErrorDataResult<>(new LoginResponse("", null),"login failed ");
         }
     }
 }
