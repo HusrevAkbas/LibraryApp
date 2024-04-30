@@ -1,5 +1,7 @@
 HELP.md
 
+/target/surefire-reportsgi
+
 ### STS ###
 .apt_generated
 .classpath
