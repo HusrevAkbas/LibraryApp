@@ -11,7 +11,7 @@ RUN mvn -B package -DskipTests
 
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
-COPY --from=builder /app/target/*.jar .
+COPY --from=builder /app/target/library-1.jar .
 EXPOSE 8080
 MAINTAINER HusrevAkbas
-ENTRYPOINT ["java", "-jar", "*.jar"]
+ENTRYPOINT ["java", "-jar", "library-1.jar"]
