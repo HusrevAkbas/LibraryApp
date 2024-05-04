@@ -1,6 +1,7 @@
 HELP.md
 
 /target/
+application.properties
 **/application.properties
 
 ### STS ###
